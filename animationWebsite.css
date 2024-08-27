@@ -1,0 +1,659 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing:border-box;
+    font-family:"Montserrat", sans-serif;
+    color:white;
+}
+*::selection{
+    background-color: red;
+    color: aqua;
+}
+html,body{
+    width:100%;
+    height: 100%;
+}
+body::-webkit-scrollbar{
+    /* display: none; */
+    width: 8px;
+    color: blue;
+    background-color: red;
+}
+body::-webkit-scrollbar-thumb{
+    background-color: white;
+    border-radius: 50px;
+    color: blue;
+}
+#nav{
+    height: 100px;
+    width:100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding:0px 150px;
+    gap:50px;
+    position:fixed;
+    z-index: 99;
+    font-size: 0.75rem;
+}
+
+#nav img{
+    width: 6.25rem;
+}
+
+#nav h4{
+    text-transform: uppercase;
+    cursor: pointer;
+}
+#cursor{
+    width:1.25rem;
+    height: 1.25rem;
+    background-color: orangered;
+    border-radius: 50%;
+    position: fixed;
+    z-index:99;
+}
+
+
+#cursorblur{
+    width:25rem;
+    height: 25rem;
+    background-color: rgba(255, 68, 0, 0.349);
+    border-radius: 50%;
+    position: fixed;
+    filter:blur(3.12rem);
+    z-index: 9;
+}
+
+video{
+    height:100%;
+    width:100%;
+    object-fit: cover;
+    position:fixed;
+    z-index: -1;;
+}
+
+#main{
+    position:relative;
+    background-color: rgba(0, 0, 0, 0.382)
+}
+
+#page1{
+    position: relative;
+    height:100vh;
+    display: flex;
+    align-items:center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    padding-top: 80px;
+    z-index: 10;
+}
+
+#page1 h1{
+    font-size: 8.75rem;
+    font-weight: 700;
+    position:relative;
+    
+}
+
+#page1 h1::before{
+    content: "PLAY. SLEEP. REPEAT.";
+    position: absolute;
+    color:black;
+    top:-6px;
+    left:-6px;
+    -webkit-text-stroke:2px orangered;
+    z-index:-1 ;
+}
+
+#page1 h2{
+    font-size: 1.8rem;
+    font-weight: 900;
+    margin-bottom: 20px;
+    z-index: 10;
+}
+
+#page1 p{
+    font-size: 1.25rem;
+    font-weight: 400;
+    width: 40%;
+}
+
+#page2{
+    width:100%;
+    min-height: 100vh;
+}
+
+#scroller{
+    padding-top: 30px;
+    white-space: nowrap;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    position: relative;
+    z-index: 10;
+}
+#scroller h4:hover{
+    color: orangered;
+}
+#scroller::-webkit-scrollbar{
+    display: none;
+}
+.scroller1{
+    display: inline-block;
+    white-space: nowrap;
+    animation-name: scroll;
+    animation-duration:10s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    /* z-index: 10; */
+}
+#scroller h4{
+    display: inline-block;
+    font-size: 6.25rem;
+    font-weight: 600;
+    font-family: gilroy;
+    text-transform: uppercase;
+    color: transparent;
+    -webkit-text-stroke: 2px orangered;
+    transition: all linear 0.3s;
+    cursor: pointer;
+}
+
+@keyframes scroll {
+    from{
+        transform:translateX(0);
+    }
+    to{
+        transform: translateX(-100%);
+    }
+}
+
+#about-us{
+    height: 40vh;
+    width: 100%;
+    display: flex;
+    margin: 30px 0px;
+    align-items: center;
+    justify-content: space-around;
+    position: relative;
+    z-index: 10;
+}
+
+#about-us img{
+    height: 13.75rem;
+    width: 13.75rem;
+    border-radius: 20px;
+    object-fit: cover;
+}
+
+#about-us-in{
+    width:50%;
+    text-align:center;   
+}
+
+#about-us-in h3{
+    font-size: 2.5rem;
+    padding-bottom: 20px;
+    font-weight: 800;
+}
+#about-us-in p{
+    font-size: 1.25rem;
+    line-height: 1.8rem;
+}
+
+#cards-container{
+    height:60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap:70px;
+    position: relative;
+    z-index: 10;
+}
+
+.card{
+    height: 80%;
+    width: 23%;
+    border-radius: 20px;
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+    transition: all ease 0.5s;
+}
+
+#card1{
+    background-image: url(./images&videos/card1.avif);
+}
+#card2{
+    background-image:url(./images&videos/card2.webp);
+}
+#card3{
+    background-image: url(./images&videos/card3.avif);
+}
+
+.overley{
+    width: 100%;
+    height: 100%;
+    background-color: orangered;
+    padding: 30px;
+    padding-top: 60px;
+    margin-bottom: 20px;
+    opacity: 0;
+    transition: all ease 0.5s;
+}
+.card:hover .overley{
+    opacity: 1;
+}
+.card:hover{
+    transform: rotate3d(-1,1,0,20deg);
+}
+.overley h4{
+    color:black;
+    font-size: 1.25rem;
+    text-transform: uppercase;
+    font-weight: 800;
+    white-space: nowrap ;
+}
+.overley p{
+    color: black;
+}
+#orange-section{
+    height:30vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background:linear-gradient(to left bottom, rgb(114, 86, 86), orangered);
+    overflow: hidden;
+    z-index: 10;
+    position: relative;
+}
+#orange-section img{
+    height: 40vh;
+    width: 30%;
+    object-fit: cover;
+}
+#orange-section h4{
+    width: 40%;
+    font-size: 1.43rem;
+    text-transform: uppercase;
+    line-height: 2.5rem;
+    text-align: center;
+    color: black;
+    font-weight: 800;
+}
+#page3{
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    background-color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 8;
+}
+#page3 img{
+    position: absolute;
+    height: 3.75rem;
+}
+#page3 p{
+    width:60%;
+    font-size: 1.25rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    text-align: center;
+    line-height: 35px;
+}
+#page3 #colon1{
+    left:12%;
+    top:15%;
+}
+
+#page3 #colon2{
+    right:12%;
+    bottom: 25%;
+}
+
+#page4{
+    height: 30vh;
+    width: 100%;
+    display: flex;
+    gap:50px;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    margin-top: 1.25rem;
+}
+
+.element{
+    height:70%;
+    width:26%;
+    overflow: hidden;
+    border-radius: 20px;
+    position: relative;
+}
+.element h2{
+    height: 100%;
+    width: 100%;
+    background-color: orangered;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.56rem;
+    font-weight: 800;
+    color: black;
+    position: absolute;
+    z-index: 10;
+    transition: all ease 0.6s;
+}
+
+.element img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.element:hover h2{
+    color: white;
+    background-color: transparent;
+    font-size: 1.37rem;
+}
+#page4 h1{
+    font-size: 4.3rem;
+    font-weight: 900;
+    top: -20%;
+    position: absolute;
+    color: black;
+    -webkit-text-stroke: 2px white;
+    font-family: gilroy;
+}
+#footer{
+    position: relative;
+    display: flex;
+    height: 50vh;
+    width: 100%;
+    background:linear-gradient(to left bottom ,orangered,rgb(234, 234, 98));
+    z-index: 99;
+
+}
+
+#footer img{
+    height: 100%;
+    width:30%;
+}
+#footer #footer-club-logo{
+    position: absolute;
+    top:10%;
+    left:5%;
+    width: 15%;
+    height: 40%;
+    transition: all ease 0.5s;
+}
+
+#footer #footer-club-logo:hover{
+    width: 14%;
+    height: 38%;
+}
+.footer-div{
+    padding-top: 2%;
+    padding-left: 5%;
+    padding-right: 1%;
+}
+.footer-div p{
+    font-size: 1.56rem;
+    font-weight: 800;
+    color: black;
+    text-transform: uppercase;
+    line-height: 2.5rem;
+    text-wrap: nowrap;
+}
+.footer-div p:hover{
+    color: white;
+}
+.footer-div #address,span{
+    font-size: 0.93rem;
+    color: black;
+    text-transform: uppercase;
+    line-height: 1.25rem;
+    font-weight: 600;
+}
+.footer-div span:hover{
+    color: white;
+}
+#directions{
+    font-size: 1.25rem;
+    font-weight: 800;
+    color: black;
+    text-transform: uppercase;
+    line-height: 2.5rem;
+    text-wrap: nowrap;
+}
+
+#footer #facebook{
+    background-image: url("./images&videos/facebook-black.png");
+    position:absolute;
+    width: 3.12rem;
+    height: 3.12rem;
+    top:52%;
+    left:8%;
+    background-size: cover;
+}
+
+#footer #facebook:hover{
+    background-image: url("./images&videos/facebook-color.png");
+    position:absolute;
+    width: 3.12rem;
+    height: 3.12rem;
+    top:52%;
+    left:8%;
+}
+#footer #insta{
+    background-image: url("./images&videos/instagram-black.png");
+    background-size: cover;
+    position:absolute;
+    width: 2.5rem;
+    height: 2.5rem;
+    top:54%;
+    left:13%;
+}
+
+#footer #insta:hover{
+    background-image: url("./images&videos/instagram-color.png");
+    background-size: cover;
+    position:absolute;
+    width: 3.62rem;
+    height: 3.62rem;
+    top:51%;
+    left:12.3%;
+}
+
+@media (max-width:1100px) {
+   html{
+    font-size: 14px;
+   }
+   #page4{
+    margin-top:35px;
+   }
+}
+
+@media (max-width:1000px) {
+    html{
+     font-size: 12px;
+    }
+    .card{
+        height: 40vh;
+    }
+ }
+ @media (max-width:850px) {
+    html{
+     font-size: 10px;
+    }
+    #page4{
+        margin-top:40px;
+       }
+    #footer #footer-club-logo{
+        position: absolute;
+        top:10%;
+        left:5%;
+        width: 15%;
+        height: 30%;
+        transition: all ease 0.5s;
+    }
+    
+    #footer #footer-club-logo:hover{
+        width: 14%;
+        height: 28%;
+    }
+
+
+#footer #facebook{
+    top:42%;
+    left:8%;
+}
+
+#footer #facebook:hover{
+    top:42%;
+    left:8%;
+}
+#footer #insta{
+    top:43%;
+    left:13%;
+}
+
+#footer #insta:hover{
+    top:42%;
+    left:12.3%;
+}
+
+ }
+
+ @media (max-width:700px) {
+    html{
+     font-size: 8px;
+    }
+
+    .card{
+        height: 30vh;
+    }
+    #page4{
+        margin-top:45px;
+       }
+ }
+ @media (max-width:600px){
+    .card{
+        height: 25vh;
+    }
+    #footer #footer-club-logo{
+        position: absolute;
+        top:10%;
+        left:5%;
+        width: 15%;
+        height: 25%;
+        transition: all ease 0.5s;
+    }
+    
+    #footer #footer-club-logo:hover{
+        width: 14%;
+        height: 22%;
+    }
+
+#footer #facebook{
+    top:37%;
+    left:8%;
+}
+
+#footer #facebook:hover{
+    top:37%;
+    left:8%;
+}
+#footer #insta{
+    top:37.5%;
+    left:13%;
+}
+
+#footer #insta:hover{
+    top:37%;
+    left:12.3%;
+}
+ }
+
+ @media (max-width:600px){
+    html{
+        font-size: 6px;
+    }
+
+    #footer #footer-club-logo{
+        position: absolute;
+        top:7%;
+        left:5%;
+        width: 15%;
+        height: 20%;
+        transition: all ease 0.5s;
+    }
+    
+    #footer #footer-club-logo:hover{
+        width: 14%;
+        height: 18%;
+    }
+
+
+#footer #facebook{
+    top:30%;
+    left:8%;
+}
+
+#footer #facebook:hover{
+    top:30%;
+    left:8%;
+}
+#footer #insta{
+    top:30.5%;
+    left:13%;
+}
+
+#footer #insta:hover{
+    top:29.5%;
+    left:12.3%;
+}
+element{
+    height: 60%;
+}
+ }
+
+ @media (max-width:500px){
+    .element{
+        height: 50%;
+    }
+
+    #footer #footer-club-logo{
+        position: absolute;
+        top:7%;
+        left:5%;
+        width: 15%;
+        height: 15%;
+        transition: all ease 0.5s;
+    }
+    
+    #footer #footer-club-logo:hover{
+        width: 14%;
+        height: 13%;
+    }
+#footer #facebook{
+    top:23%;
+    left:8%;
+}
+
+#footer #facebook:hover{
+    top:23%;
+    left:8%;
+}
+#footer #insta{
+    top:23.5%;
+    left:13%;
+}
+
+#footer #insta:hover{
+    top:22.5%;
+    left:12.3%;
+}
+ }
